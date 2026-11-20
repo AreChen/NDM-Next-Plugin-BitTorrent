@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "bittorrent",
+  "version": "0.1.0",
+  "name": {"en": "BitTorrent", "zh": "BitTorrent"},
+  "description": {"en": "Download magnet links and .torrent files with librqbit.", "zh": "使用 librqbit 下载磁力链接和 .torrent 种子。"},
+  "engine": "ndm-bittorrent-engine",
+  "engine_protocol": 1,
+  "inputs": [
+    {"schemes": ["magnet"]},
+    {"schemes": ["file", "https", "http"], "suffixes": [".torrent"]}
+  ],
+  "limits": {"active_tasks": 4, "download_threads": 128},
+  "panel": "panel.js",
+  "options": [
+    {"key": "dht", "kind": "boolean", "label": {"en": "Find peers using DHT", "zh": "通过 DHT 查找节点"}, "default": true},
+    {"key": "file-pattern", "kind": "text", "label": {"en": "File filter (regex, optional)", "zh": "文件筛选（可选正则）"}, "max_length": 256}
+  ],
+  "tools": [
+    {"id": "download", "name": {"en": "BitTorrent download", "zh": "BitTorrent 下载"}, "description": {"en": "Download a magnet link or .torrent file through NDM Next. Thread count controls the maximum simultaneous peer connections.", "zh": "通过 NDM Next 下载磁力链接或 .torrent 种子。线程数控制同时连接的节点上限。"}}
+  ]
+}
