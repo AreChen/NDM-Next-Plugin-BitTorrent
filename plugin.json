@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "bittorrent",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": {"en": "BitTorrent", "zh": "BitTorrent"},
   "description": {"en": "Download magnet links and .torrent files with librqbit.", "zh": "使用 librqbit 下载磁力链接和 .torrent 种子。"},
   "engine": "ndm-bittorrent-engine",
@@ -13,6 +13,7 @@
   "limits": {"active_tasks": 4, "download_threads": 128},
   "capabilities": {"inspect_files": true, "share_completed": true},
   "panel": "panel.js",
+  "skill": "AI-GUIDE.md",
   "options": [
     {"key": "dht", "kind": "boolean", "label": {"en": "Find peers using DHT", "zh": "通过 DHT 查找节点"}, "default": true},
     {"key": "local-discovery", "kind": "boolean", "label": {"en": "Local peer discovery", "zh": "查找局域网节点"}, "default": false},
