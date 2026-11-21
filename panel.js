@@ -1,6 +1,12 @@
-function panel(context) {
-  if (context.scheme === "magnet") {
-    return {fields: [{key: "dht"}, {key: "file-pattern"}]};
-  }
-  return {fields: [{key: "file-pattern"}, {key: "dht"}]};
+function panel() {
+  return {fields: [
+    {key: "peer-limit"},
+    {key: "download-limit"},
+    {key: "upload-limit"},
+    {key: "dht"},
+    {key: "local-discovery"},
+    {key: "upnp"},
+    {key: "utp"},
+    {key: "file-pattern"},
+  ]};
 }

@@ -6,8 +6,9 @@ rust-version = "1.100"
 license = "MIT"
 
 [dependencies]
+anyhow = "1"
 librqbit = { version = "9.1.0", default-features = false, features = ["rust-tls"] }
-ndm-plugin-sdk = { git = "https://github.com/AreChen/NDM-Next.git", rev = "f8524704ba20b601ce8da9683b500bcf673b1512" }
+ndm-plugin-sdk = { git = "https://github.com/AreChen/NDM-Next.git", rev = "963c9d78cf4d307ecf45646949302f7c404cf4a5" }
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "stream"] }
 serde_json = "1"
 tokio = { version = "1", features = ["fs", "io-util", "macros", "rt-multi-thread", "time"] }

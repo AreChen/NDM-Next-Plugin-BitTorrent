@@ -1766,6 +1766,7 @@ checksum = "743fb55ba31b18fb1ecef6bdc9aa2743314978ac084044301a7eee33fb99a20d"
 name = "ndm-bittorrent-engine"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "librqbit",
  "ndm-plugin-sdk",
  "reqwest",
@@ -1776,11 +1777,12 @@ dependencies = [
 [[package]]
 name = "ndm-plugin-sdk"
 version = "0.1.0"
-source = "git+https://github.com/AreChen/NDM-Next.git?rev=f8524704ba20b601ce8da9683b500bcf673b1512#f8524704ba20b601ce8da9683b500bcf673b1512"
+source = "git+https://github.com/AreChen/NDM-Next.git?rev=963c9d78cf4d307ecf45646949302f7c404cf4a5#963c9d78cf4d307ecf45646949302f7c404cf4a5"
 dependencies = [
  "semver",
  "serde",
  "serde_json",
+ "url",
  "uuid",
 ]
 

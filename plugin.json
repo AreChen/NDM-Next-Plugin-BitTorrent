@@ -11,10 +11,17 @@
     {"schemes": ["file", "https", "http"], "suffixes": [".torrent"]}
   ],
   "limits": {"active_tasks": 4, "download_threads": 128},
+  "capabilities": {"inspect_files": true, "share_completed": true},
   "panel": "panel.js",
   "options": [
     {"key": "dht", "kind": "boolean", "label": {"en": "Find peers using DHT", "zh": "通过 DHT 查找节点"}, "default": true},
-    {"key": "file-pattern", "kind": "text", "label": {"en": "File filter (regex, optional)", "zh": "文件筛选（可选正则）"}, "max_length": 256}
+    {"key": "local-discovery", "kind": "boolean", "label": {"en": "Local peer discovery", "zh": "查找局域网节点"}, "default": false},
+    {"key": "upnp", "kind": "boolean", "label": {"en": "UPnP port mapping", "zh": "UPnP 端口映射"}, "help": {"en": "Allow a compatible router to open an incoming peer port while the worker is running.", "zh": "插件运行期间，允许支持 UPnP 的路由器开放一个用于连接节点的入站端口。"}, "default": false},
+    {"key": "utp", "kind": "boolean", "label": {"en": "Allow µTP peers", "zh": "允许 µTP 节点"}, "default": false},
+    {"key": "peer-limit", "kind": "integer", "min": 1, "max": 128, "label": {"en": "Peer limit", "zh": "同时连接节点上限"}, "help": {"en": "Leave empty to use NDM Next's download thread setting. The engine supports up to 128 peers per task.", "zh": "留空时采用 NDM Next 的下载线程数。每个种子任务最多连接 128 个节点。"}},
+    {"key": "download-limit", "kind": "integer", "min": 0, "max": 1048576, "default": 0, "label": {"en": "Down limit (KiB/s)", "zh": "下载限速（KiB/s）"}, "help": {"en": "0 means unlimited.", "zh": "填 0 表示不限速。"}},
+    {"key": "upload-limit", "kind": "integer", "min": 0, "max": 1048576, "default": 0, "label": {"en": "Up limit (KiB/s)", "zh": "上传限速（KiB/s）"}, "help": {"en": "0 means unlimited. Applies during both downloading and seeding.", "zh": "填 0 表示不限速。下载和做种时都生效。"}},
+    {"key": "file-pattern", "kind": "text", "label": {"en": "File filter", "zh": "文件筛选"}, "help": {"en": "Optional filename regular expression. A file selection takes precedence.", "zh": "可填写文件名正则表达式。勾选的文件优先于正则筛选。"}, "max_length": 256}
   ],
   "tools": [
     {"id": "download", "name": {"en": "BitTorrent download", "zh": "BitTorrent 下载"}, "description": {"en": "Download a magnet link or .torrent file through NDM Next. Thread count controls the maximum simultaneous peer connections.", "zh": "通过 NDM Next 下载磁力链接或 .torrent 种子。线程数控制同时连接的节点上限。"}}
