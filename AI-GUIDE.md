@@ -3,7 +3,7 @@
 Use `ndm_bittorrent__download` for a magnet URI, a remote `.torrent` URL, or
 the absolute path to a local `.torrent` file. For a mixed batch, set
 `"plugin":"bittorrent"` on the applicable `ndm_download` items. Leave
-`destination` out to use NDM Next's configured folder.
+`destination` out to use OnesDM's configured folder.
 
 - To download matching files only, use `options.file-pattern` with a filename
   regular expression. For example, pass `"options":{"file-pattern":"[.]mkv$"}`

@@ -16,7 +16,7 @@ fn main() -> io::Result<()> {
     if std::env::args().nth(1).as_deref() != Some(ENGINE_ARGUMENT) {
         return Err(io::Error::new(
             io::ErrorKind::InvalidInput,
-            "run this engine through NDM Next",
+            "run this engine through OnesDM",
         ));
     }
     serve_engine(BitTorrent)
